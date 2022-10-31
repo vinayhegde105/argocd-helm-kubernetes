@@ -9,7 +9,7 @@ node {
 
     stage('Build Docker image') {
   
-       app = docker.build("192.168.56.120:9091/helmodia:${env.BUILD_NUMBER}")
+       app = docker.build("192.168.56.120:9092/helmodia:${env.BUILD_NUMBER}")
     }
 
     stage('Test Docker image') {
@@ -21,12 +21,8 @@ node {
     }
 
     stage('Push image to Nexus') {
-        sh 'docker login -u admin -p admin http://192.168.56.120:9091/repository/shanvi-image-helm/'
+        sh 'docker login -u admin -p admin http://192.168.56.120:9092/repository/shanvi-image-helm/'
             app.push("${env.BUILD_NUMBER}")
-    }
-    stage('Trigger Update Manifest') {
-        echo "triggering Update manifest Job"
-            build job: 'argocd-update-manifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
     }
     
 }

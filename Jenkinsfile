@@ -9,7 +9,7 @@ node {
 
     stage('Build Docker image') {
   
-       app = docker.build("192.168.56.120:9092/helmodia:${env.BUILD_NUMBER}")
+       app = docker.build("192.168.56.120:9092/shanvi-image-helm/helmodia:${env.BUILD_NUMBER}")
     }
 
     stage('Test Docker image') {

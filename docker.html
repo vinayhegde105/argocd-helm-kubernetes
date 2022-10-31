@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: GoldenRod;}
+</style>
+</head>
+<body>
+
+<p style="font-size:30px; color:DarkRed; font-family:verdana;"><u>What is Docker</u></p>
+<p style="font-size:20px; color:Blue; font-family:verdana;">Docker is an open source containerization platform. It enables developers to package applications into containers—standardized executable components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. Containers simplify delivery of distributed applications, and have become increasingly popular as organizations shift to cloud-native development and hybrid multicloud environments.</p>
+<p style="font-size:30px; color:DarkRed; font-family:verdana;"><u>What are containers?</u></p>
+<p style="font-size:20px; color:Blue; font-family:verdana;">Containers, or Linux Containers, are a technology that allows us to isolate certain kernel processes and trick them into thinking they're the only ones running in a completely new computer.
+
+Different from Virtual Machines, a container can share the kernel of the operating system while only having their different binaries/libraries loaded with them.
+
+In other words, you don't need to have whole different OS (called guest OS) installed inside your host OS. You can have several containers running within a single OS without having several different guest OS's installed.</p>
+
+<p style="font-size:30px; color:DarkRed; font-family:verdana;"><u>How containers work?</u></font></p>
+<p style="font-size:20px; color:Blue; font-family:verdana;">Containers are made possible by process isolation and virtualization capabilities built into the Linux kernel. These capabilities - such as control groups (Cgroups) for allocating resources among processes, and namespaces for restricting a processes access or visibility into other resources or areas of the system - enable multiple application components to share the resources of a single instance of the host operating system in much the same way that a hypervisor enables multiple virtual machines (VMs) to share the CPU, memory and other resources of a single hardware server. 
+ <br>
+<p style="font-size:20px; color:Blue; font-family:verdana;">
+=> <b><u>Lighter weight:</u></b> Unlike VMs, containers don’t carry the payload of an entire OS instance and hypervisor; they include only the OS processes and dependencies necessary to execute the code. Container sizes are measured in megabytes (vs. gigabytes for some VMs), make better use of hardware capacity, and have faster startup times. <br>
+=> <b><u>Greater resource efficiency:</u></b> With containers, you can run several times as many copies of an application on the same hardware as you can using VMs. This can reduce your cloud spending. <br>
+=> <b><u>Improved developer productivity:</u></b> Compared to VMs, containers are faster and easier to deploy, provision and restart. This makes them ideal for use in continuous integration and continuous delivery (CI/CD) pipelines and a better fit for development teams adopting Agile and DevOps practices. <br></p>
+
+</body>
+</html>

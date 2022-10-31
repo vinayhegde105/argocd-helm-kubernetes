@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: Teal;}
+</style>
+</head>
+<body>
+
+<p style="font-size:30px; color:Gold; font-family:verdana;"><u>What is Terraform?</u></p>
+<p style="font-size:20px; color:White; font-family:verdana;">HashiCorp Terraform is an open source infrastructure as code (IaC) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run.
+
+Infrastructure as code is an IT practice that manages an application's underlying IT infrastructure through programming. This approach to resource allocation allows developers to logically manage, monitor and provision resources -- as opposed to requiring that an operations team manually configure each required resource.
+
+Terraform users define and enforce infrastructure configurations by using a JSON-like configuration language called HCL (HashiCorp Configuration Language). HCL's simple syntax makes it easy for DevOps teams to provision and re-provision infrastructure across multiple cloud and on-premises data centers.
+
+HashiCorp offers a commercial version of Terraform called Terraform Enterprise. According to the HashiCorp website, the commercial version includes enterprise features on top of open source Terraform and includes a framework called Sentinel that can implement policy as code.</p>
+<p style="font-size:30px; color:Gold; font-family:verdana;"><u>How does Terraform work?
+</u></p>
+<p style="font-size:20px; color:White; font-family:verdana;">Terraform allows users to define their entire infrastructure simply by using configuration files and version control. When a command is given to deploy and run a server, database or load balancer, Terraform parses the code and translates it into an application programming interface (API) call to the resource provider. Because Terraform is open source, developers are always able to extend the tool's usefulness by writing new plugins or compiling different versions of existing plugins.
+
+Terraform Core oversees the reading and interpolation of resource plan executions, resource graphs, state management features and configuration files. Core is composed of compiled binaries written in the Go programming language. Each compiled binary acts as a command-line interface (CLI) for communicating with plugins through remote procedure calls (RPC).</p>
+
+<p style="font-size:30px; color:Gold; font-family:verdana;"><u>Terraform modules?</u></font></p>
+<p style="font-size:20px; color:White; font-family:verdana;">Terraform modules allow complex resources to be used and reused as needed. Each module is essentially a container for multiple infrastructure resources that the developer wants to group together. Modules have both input and output variables. Input variables accept values from a calling module. Output variables return data to the calling module. Modules can call each other, which helps make configurations faster. 
+ </p>
+
+</body>
+</html>

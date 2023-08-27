@@ -8,7 +8,7 @@ image:
   repository: 34.125.28.169:5000/radar/radar-driver
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1"
+  tag: "3"
 
 imagePullSecrets: [regsecret]
 nameOverride: ""

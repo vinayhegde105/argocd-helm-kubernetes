@@ -29,7 +29,7 @@ node {
         echo "Packing helm chart"
             sh "helm package -d ${WORKSPACE}/helm ${WORKSPACE}/helm/devopsodia"
            // sh "${WORKSPACE}/build.sh --pack_helm --push_helm --helm_repo ${HELM_REPO} --helm_usr ${HELM_USR} --helm_psw ${HELM_PSW}"
-           sh "curl -u admin:ubnt@117 http://34.125.28.169:8081/repository/radar-helm/ --upload-file ${WORKSPACE}/helm/devopsodia-2.tgz -v"
+           sh "curl -u admin:ubnt@117 http://34.125.28.169:8081/repository/radar-helm/ --upload-file ${WORKSPACE}/helm/devopsodia-3.tgz -v"
             
         }
     

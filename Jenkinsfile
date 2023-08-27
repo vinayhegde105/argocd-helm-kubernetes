@@ -21,7 +21,7 @@ node {
     }
 
     stage('Push image to Nexus') {
-        sh 'docker login -u admin -p ubnt@117 http://34.125.28.169:8081/repository/radar-helm/'
+        sh 'docker login -u admin -p ubnt@117 http://34.125.28.169:5000/repository/radar/'
             app.push("${env.BUILD_NUMBER}")
     }
     stage('Publish  Helm') {

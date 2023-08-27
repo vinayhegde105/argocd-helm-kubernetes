@@ -5,10 +5,10 @@
 replicaCount: 4
 
 image:
-  repository: 192.168.56.120:9092/argocd-image-helm/devopsodiahelm
+  repository: 34.125.28.169:5000/radar/radar-driver
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1"
+  tag: "13"
 
 imagePullSecrets: []
 nameOverride: ""

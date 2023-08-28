@@ -28,6 +28,7 @@ node {
     
         echo "Packing helm chart"
             sh """sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}\"/g' radar/radar-driver/dev.yaml"""
+            sh """sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}\"/g' radar/radar-driver/Values.yaml"""
             sh """sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}\"/g' radar/radar-driver/uat.yaml"""
             sh "helm package -d ${WORKSPACE}/radar ${WORKSPACE}/radar/radar-driver"
             sh "mv ${WORKSPACE}/radar/radar-driver-1.tgz ${WORKSPACE}/radar/radar-driver-${env.BUILD_NUMBER}.tgz"

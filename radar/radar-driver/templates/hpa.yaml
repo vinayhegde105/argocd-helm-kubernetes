@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "devopsodia.fullname" . }}
+  name: {{ include "radar-driver.fullname" . }}
   labels:
-    {{- include "devopsodia.labels" . | nindent 4 }}
+    {{- include "radar-driver.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "devopsodia.fullname" . }}
+    name: {{ include "radar-driver.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

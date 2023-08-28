@@ -27,8 +27,8 @@ node {
     stage('Publish  Helm') {
     
         echo "Packing helm chart"
-            sh "sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}/g\"' radar/radar-driver/dev.yaml"
-            sh "sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}/g\"' radar/radar-driver/uat.yaml"
+            sh """sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}\"/g' radar/radar-driver/dev.yaml"""
+            sh """sed -i -e 's/imagetag.*/imagetag:\"${env.BUILD_NUMBER}\"/g' radar/radar-driver/uat.yaml"""
             sh "helm package -d ${WORKSPACE}/radar ${WORKSPACE}/radar/radar-driver"
            // sh "${WORKSPACE}/build.sh --pack_helm --push_helm --helm_repo ${HELM_REPO} --helm_usr ${HELM_USR} --helm_psw ${HELM_PSW}"
            sh "curl -u admin:ubnt@117 http://34.125.28.169:8081/repository/radar-helm/ --upload-file ${WORKSPACE}/radar/radar-driver-1.tgz -v"

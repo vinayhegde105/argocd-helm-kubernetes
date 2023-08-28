@@ -27,9 +27,9 @@ node {
     stage('Publish  Helm') {
     
         echo "Packing helm chart"
-            sh "helm package -d ${WORKSPACE}/radar ${WORKSPACE}/radar/com/et/radar-driver"
+            sh "helm package -d ${WORKSPACE}/radar ${WORKSPACE}/radar/radar-driver"
            // sh "${WORKSPACE}/build.sh --pack_helm --push_helm --helm_repo ${HELM_REPO} --helm_usr ${HELM_USR} --helm_psw ${HELM_PSW}"
-           sh "curl -u admin:ubnt@117 http://34.125.28.169:8081/repository/radar-helm/ --upload-file ${WORKSPACE}/radar/com/et/radar-driver-1.tgz -v"
+           sh "curl -u admin:ubnt@117 http://34.125.28.169:8081/repository/radar-helm/ --upload-file ${WORKSPACE}/radar/radar-driver-1.tgz -v"
             
         }
     

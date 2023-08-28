@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "radar-driver.name" -}}
+{{- define "devopsodia.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "radar-driver.fullname" -}}
+{{- define "devopsodia.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "radar-driver.chart" -}}
+{{- define "devopsodia.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "radar-driver.labels" -}}
-helm.sh/chart: {{ include "radar-driver.chart" . }}
-{{ include "radar-driver.selectorLabels" . }}
+{{- define "devopsodia.labels" -}}
+helm.sh/chart: {{ include "devopsodia.chart" . }}
+{{ include "devopsodia.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "radar-driver.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "radar-driver.name" . }}
+{{- define "devopsodia.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "devopsodia.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "radar-driver.serviceAccountName" -}}
+{{- define "devopsodia.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "radar-driver.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "devopsodia.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

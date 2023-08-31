@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: 34.125.28.169:5000/radar/radar-driver
+  repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  imagetag: "1"
+  imagetag: "latest"
 
 imagePullSecrets: [regsecret]
 nameOverride: ""
